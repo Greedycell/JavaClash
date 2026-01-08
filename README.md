@@ -10,10 +10,16 @@ Open source Java 15 Clash of Clans server for version 13!
 
 Next step you need to compile the server OR use prebuilt jar.
 
-To run the server use this command:
+```
+git clone https://github.com/Greedycell/JavaClash.git
+cd JavaClash
+javac -d out (Get-ChildItem -Recurse -Filter *.java | % FullName)
+```
+     
+To run the server use these commands in Powershell (Administrator) or Terminal:
 
 ```
-java -jar JClash.jar
+java -cp out com.xeon.javaclash.Main
 ```
 
 ### What's working?
