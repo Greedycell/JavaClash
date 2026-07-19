@@ -12,15 +12,17 @@ public class EnemyHomeDataMessage extends PiranhaMessage {
     @Override
     public void encode() {
         writer.writeInt(10);
-        writer.writeInt(-1);
+        writer.writeInt(0);
+        writer.writeInt(0);
 
         this.connection.player.LogicClientHome(writer); // enemy
         this.connection.player.LogicClientAvatar(writer); // enemy
 
         this.connection.player.LogicClientAvatar(writer);
+
         writer.writeInt(3);
         writer.writeInt(0);
-        writer.writeInt(0);
+        writer.writeByte(0);
     }
 
 }
