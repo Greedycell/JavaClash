@@ -9,6 +9,7 @@ import com.xeon.javaclash.protocol.commands.client.LogicMatchmakingCommand;
 
 public class LogicCommandManager {
     public static LogicCommand createCommand(int id, Reader reader, Connection connection){
+        Debugger.print("Received client command: " + id);
         switch (id){
             case 518:
                 return new LogicBuyResourceCommand(id, reader, connection);

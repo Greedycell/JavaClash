@@ -13,6 +13,7 @@ import com.xeon.javaclash.protocol.messages.server.EndClientTurnMessage;
 public class LogicMagicMessageFactory {
 
     public static PiranhaMessage createMessageByType(int id, byte[] payload, Connection connection){
+        Debugger.print("Received client packet: " + id);
         switch (id){
             case 10101:
                 return new LoginMessage(id, payload, connection);

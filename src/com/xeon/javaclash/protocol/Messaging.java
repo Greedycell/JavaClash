@@ -23,6 +23,7 @@ public class Messaging {
     }
 
     public void sendMessage(PiranhaMessage message){
+        Debugger.print("Received server packet: " + message.id);
         message.encode();
         message.process();
         message.payload = message.writer.toByteArray();
