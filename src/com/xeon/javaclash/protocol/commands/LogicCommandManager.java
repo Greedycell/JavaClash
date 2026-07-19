@@ -5,6 +5,7 @@ import com.xeon.javaclash.core.Debugger;
 import com.xeon.javaclash.datastream.Reader;
 import com.xeon.javaclash.protocol.commands.client.LogicAttackNpcCommand;
 import com.xeon.javaclash.protocol.commands.client.LogicBuyResourceCommand;
+import com.xeon.javaclash.protocol.commands.client.LogicMatchmakingCommand;
 
 public class LogicCommandManager {
     public static LogicCommand createCommand(int id, Reader reader, Connection connection){
@@ -13,6 +14,8 @@ public class LogicCommandManager {
                 return new LogicBuyResourceCommand(id, reader, connection);
             case 640:
                 return new LogicAttackNpcCommand(id, reader, connection);
+            case 800:
+                return new LogicMatchmakingCommand(id, reader, connection);
             default:
                 Debugger.print("Unhandled command: " + id);
                 return null;
